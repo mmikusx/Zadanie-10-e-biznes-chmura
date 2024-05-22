@@ -48,6 +48,8 @@ jobs:
           app_location: "client" # App source code path
           output_location: "client/build" # Built app content directory
           ###### End of Repository/Build Configurations ######
+        env:
+          NODE_VERSION: 18  # Set Node.js version to 18
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
