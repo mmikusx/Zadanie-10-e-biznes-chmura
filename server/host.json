@@ -2,18 +2,7 @@
   "version": "2.0",
   "extensions": {
     "http": {
-      "routePrefix": ""
-    },
-    "durableTask": {
-      "hubName": "MyTaskHub"
-    }
-  },
-  "logging": {
-    "applicationInsights": {
-      "samplingSettings": {
-        "isEnabled": true
-      }
+      "routePrefix": "api"
     }
   }
 }
-
