@@ -21,9 +21,6 @@ jobs:
           submodules: true
           lfs: false
 
-      - name: Install apt-utils
-        run: sudo apt-get update && apt-get install -y apt-utils
-
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
