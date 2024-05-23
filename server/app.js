@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const cors = require('cors');
 const PORT = process.env.PORT || 3001;
 
 let products = [
@@ -7,6 +8,7 @@ let products = [
     { id: 2, name: 'Product 2', price: 20 }
 ];
 
+app.use(cors());
 app.use(express.json());
 
 app.get('/products', (req, res) => {
