@@ -41,10 +41,6 @@ jobs:
         run: npm install
         working-directory: ./server
 
-      - name: Start backend
-        run: npm start
-        working-directory: ./server
-
       - name: List files after build
         run: ls -la ./ && ls -la ./build
 
@@ -62,11 +58,6 @@ jobs:
           ###### End of Repository/Build Configurations ######
         env:
           NODE_VERSION: 18  # Set Node.js version to 18
-
-      - name: Check server
-        run: |
-          sleep 60 # Wait for the server to start
-          curl https://proud-stone-05d5a5010.5.azurestaticapps.net/api
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
