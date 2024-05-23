@@ -8,7 +8,7 @@ let products = [
     { id: 2, name: 'Product 2', price: 20 }
 ];
 
-app.use(cors());
+app.use(cors({ origin: '*' }));
 app.use(express.json());
 
 app.get('/api/products', (req, res) => {

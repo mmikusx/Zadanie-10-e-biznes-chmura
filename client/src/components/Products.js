@@ -7,7 +7,7 @@ function Products() {
     const [cartItems, setCartItems] = useContext(CartContext);
 
     useEffect(() => {
-        fetch('https://proud-stone-05d5a5010.5.azurestaticapps.net/products')
+        fetch('https://proud-stone-05d5a5010.5.azurestaticapps.net/api/products')
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching products:', error));
