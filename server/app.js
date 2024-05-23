@@ -11,21 +11,16 @@ let products = [
 app.use(cors());
 app.use(express.json());
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
     res.json(products);
 });
 
-app.post('/products', (req, res) => {
+app.post('/api/products', (req, res) => {
     const newProduct = { id: products.length + 1, ...req.body };
     products.push(newProduct);
-    res.json(products);
-});
-
-app.post('/payments', (req, res) => {
-    console.log(req.body);
-    res.status(200).send('Płatność zakończona pomyślnie!');
+    res.json(newProduct);
 });
 
 app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
 });
