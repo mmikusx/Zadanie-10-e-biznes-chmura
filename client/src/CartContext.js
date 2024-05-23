@@ -7,7 +7,7 @@ export const CartProvider = (props) => {
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3001/products')
+        fetch('https://proud-stone-05d5a5010.5.azurestaticapps.net//products')
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching products:', error));
