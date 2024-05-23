@@ -3,11 +3,11 @@ import { CartContext } from '../CartContext';
 
 function Products() {
     const [products, setProducts] = useState([]);
-    const [newProduct, setNewProduct] = useState({ name: '', price: '' });
+    const [newProduct, setNewProduct] = useState({ id: '', name: '', price: '' });
     const [cartItems, setCartItems] = useContext(CartContext);
 
     useEffect(() => {
-        fetch('https://proud-stone-05d5a5010.5.azurestaticapps.net/api/products')
+        fetch('https://cloudserverproject.azurewebsites.net/products')
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error('Error fetching products:', error));
@@ -19,7 +19,7 @@ function Products() {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        fetch('https://proud-stone-05d5a5010.5.azurestaticapps.net/api/products', {
+        fetch('https://cloudserverproject.azurewebsites.net/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
