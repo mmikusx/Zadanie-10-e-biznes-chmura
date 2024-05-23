@@ -19,7 +19,7 @@ function Products() {
 
     const handleFormSubmit = (event) => {
         event.preventDefault();
-        fetch('http://localhost:3001/products', {
+        fetch('https://proud-stone-05d5a5010.5.azurestaticapps.net/api/products', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
