@@ -26,19 +26,20 @@ jobs:
         with:
           node-version: '18'
 
-      - name: Install dependencies
+      - name: Install frontend dependencies
         run: npm install
         working-directory: ./client
 
-      - name: List files before build
-        run: ls -la ./client
-
-      - name: Build the app
+      - name: Build the frontend app
         run: npm run build
         working-directory: ./client
 
       - name: Move build folder
         run: mv client/build build
+
+      - name: Install backend dependencies
+        run: npm install
+        working-directory: ./server
 
       - name: List files after build
         run: ls -la ./ && ls -la ./build
@@ -52,7 +53,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           app_location: "client" # App source code path
-          api_location: "server"
+          api_location: "server" # Api source code path - this folder should contain your API code
           output_location: "build" # Built app content directory
           ###### End of Repository/Build Configurations ######
         env:
